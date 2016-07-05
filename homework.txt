@@ -1,0 +1,33 @@
+1. Робота із історією змін
+
+
+    1)  git log ^^master ^^develop develop-feature1  --pretty=format:"Message- %s , Author- %an" --since="3 hours ago" -3
+
+    2)  git log master develop --grep="some task"   --pretty=format:"Message- %s , Author-  %an , Date- %ar" -since="3 hours ago"
+
+
+2. Вибіркове злиття
+	2.1 Виводимо список комітів 
+		git log
+
+	2.2 Перехід на гілку
+		git checkout develop
+
+
+	2.3 Робимо commit, який потрібно
+		git cherry-pick // номер commit у вигляді - SHA-1 //
+
+	2.4 Відправка змін
+		git push
+
+
+3. Виправлення помилок
+
+	3.1 Перехід на гілку під назвою develop-feature3
+		git checkout develop-feature3
+	
+	3.2	Далі використовуємо таку команду
+		git rebase -i HEAD~2
+		3.2.1 Проводимо потрібно зміни
+	3.3 Відправка змін	
+		git push -f
